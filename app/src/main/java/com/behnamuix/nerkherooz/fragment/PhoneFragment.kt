@@ -50,8 +50,13 @@ class PhoneFragment : Fragment() {
             } else {
                 val bundle=Bundle()
                 val phone=binding.etPhone.text.toString().trim()
+                val code="123456"
+                //add this lib in gradle(project):
+               // id "androidx.navigation.safeargs.kotlin" version "2.5.1" apply false
+
+
                 bundle.putString("phoneNo",phone)
-                sendToPhoneNumber(phone)
+                sendCodeToPhoneNumber(phone,code)
 
 
 
@@ -69,7 +74,7 @@ class PhoneFragment : Fragment() {
         return binding.root
     }
 
-    private fun sendToPhoneNumber(phone:String) {
+    private fun sendCodeToPhoneNumber(phone:String,code:String) {
         generateCode()
     }
 

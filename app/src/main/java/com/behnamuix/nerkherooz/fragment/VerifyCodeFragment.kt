@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.fragment.navArgs
 import com.behnamuix.nerkherooz.R
 import com.behnamuix.nerkherooz.databinding.FragmentVerifyCodeBinding
 import com.goodiebag.pinview.Pinview
@@ -18,6 +19,8 @@ class VerifyCodeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding=FragmentVerifyCodeBinding.inflate(inflater)
+        val phone = requireArguments().getString("phoneNo")
+        binding.tvPhone.text=phone
 
         binding.pinview.currentFocus
         binding.pinview.setPinViewEventListener(object :Pinview.PinViewEventListener{
