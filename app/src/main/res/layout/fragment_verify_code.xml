@@ -45,6 +45,17 @@
                 android:layout_height="30dp"
                 android:layout_marginLeft="20dp"
                 android:src="@drawable/bg_part" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:fontFamily="@font/vazir_thin"
+                android:gravity="center_vertical"
+                android:text="مرحله 2 از 2"
+                android:textColor="#FFFFFF" />
         </LinearLayout>
 
         <TextView
@@ -53,6 +64,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/vazir_bold"
             android:text="09307283313"
+            android:textColor="#8F8F8F"
             android:textSize="@dimen/headline2"
             app:layout_constraintBottom_toTopOf="@+id/cardView"
             app:layout_constraintEnd_toEndOf="@+id/textView7"

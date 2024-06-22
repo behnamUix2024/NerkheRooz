@@ -44,6 +44,8 @@ class PhoneFragment : Fragment() {
         binding.btnPhone.setOnClickListener() {
             if (binding.etPhone.text.isEmpty()) {
                 binding.etPhone.setError("این فیلد نمیتواند خالی باشد")
+            }else{
+
             }
             if (!isNetworkConnected()) {
                 showSnack("اتصال اینترنت شما برقرا نیست لطفا بعد چک کردن اتصال دوباره امتجان کنید")

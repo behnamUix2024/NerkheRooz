@@ -20,7 +20,7 @@ class VerifyCodeFragment : Fragment() {
     ): View? {
         binding=FragmentVerifyCodeBinding.inflate(inflater)
         val phone = requireArguments().getString("phoneNo")
-        binding.tvPhone.text=phone
+        binding.tvPhone.text= "0$phone"
 
         binding.pinview.currentFocus
         binding.pinview.setPinViewEventListener(object :Pinview.PinViewEventListener{
