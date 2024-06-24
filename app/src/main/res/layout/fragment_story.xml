@@ -12,7 +12,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
         android:background="@color/teal_200"
         android:elevation="6dp"
@@ -60,34 +60,51 @@
             android:textColor="#FFFFFF" />
     </LinearLayout>
 
-    <TextView
+    <LinearLayout
         android:id="@+id/tv_alert"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:background="@drawable/bg_alert"
-        android:backgroundTint="#E53935"
-        android:drawableRight="@drawable/danger_2"
-        android:drawablePadding="4dp"
-        android:drawableTint="#FFFFFF"
-        android:fontFamily="@font/vazir_medium"
-        android:gravity="right"
-        android:padding="4dp"
-        android:text="کاربر گرامی  اینترنت شما متصل نیست!"
-        android:textColor="#FFFFFF"
-        android:textSize="@dimen/caption"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
         app:layout_constraintStart_toStartOf="@+id/linearLayout2"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0">
+
+        <ImageView
+            android:id="@+id/img_close_alert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="4dp"
+            android:padding="4dp"
+            android:tint="#FFFFFF"
+            app:srcCompat="@drawable/baseline_close_24" />
+
+        <TextView
+            android:id="@+id/tv_alert2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableRight="@drawable/danger_2"
+            android:drawablePadding="4dp"
+            android:drawableTint="#FFFFFF"
+            android:fontFamily="@font/vazir_medium"
+            android:gravity="right"
+            android:padding="8dp"
+            android:text="کاربر گرامی  اینترنت شما متصل نیست!"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/caption" />
+
+    </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout6"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
         android:background="@color/white"
         android:elevation="8dp"
@@ -95,8 +112,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-        app:layout_constraintVertical_bias="0.18">
+        app:layout_constraintTop_toBottomOf="@+id/tv_alert"
+        app:layout_constraintVertical_bias="0.0">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout2"
@@ -338,6 +355,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="8dp"
         android:gravity="center"

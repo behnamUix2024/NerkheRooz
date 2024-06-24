@@ -1,7 +1,5 @@
 package com.behnamuix.nerkherooz.fragment
 
-import android.animation.AnimatorSet
-import android.animation.ObjectAnimator
 import android.animation.ValueAnimator
 import android.content.Context
 import android.net.ConnectivityManager
@@ -12,8 +10,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.AccelerateDecelerateInterpolator
-import android.view.animation.AccelerateInterpolator
 import android.view.animation.AnimationUtils
 import androidx.navigation.fragment.findNavController
 import com.behnamuix.nerkherooz.R
@@ -33,12 +29,16 @@ class StoryFragment : Fragment() {
 
         binding = FragmentStoryBinding.inflate(inflater)
         if (!isNetworkConnected()) {
-            val animFadein = AnimationUtils.loadAnimation(
-                requireContext(),
-                R.anim.slide
-            )
-            animFadein.fillAfter=true
-            binding.tvAlert.startAnimation(animFadein)
+            binding.tvAlert.visibility = View.VISIBLE
+
+        } else {
+            binding.tvAlert.visibility = View.GONE
+
+        }
+        alertAnimation()
+        binding.imgCloseAlert.setOnClickListener() {
+            binding.tvAlert.visibility = View.GONE
+
 
         }
         binding.tvPart.setText("0/4")
@@ -67,6 +67,15 @@ class StoryFragment : Fragment() {
 
 
         return binding.root
+    }
+
+    private fun alertAnimation() {
+        val animFadein = AnimationUtils.loadAnimation(
+            requireContext(),
+            R.anim.fade
+        )
+        animFadein.fillAfter = true
+        binding.tvAlert.startAnimation(animFadein)
     }
 
     private fun startChatAnimation1() {

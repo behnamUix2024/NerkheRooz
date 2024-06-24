@@ -14,11 +14,29 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/vazir_medium"
+            android:layoutDirection="rtl"
+            android:text="@string/tv_phone"
+            android:textColor="#000000"
+            android:textSize="@dimen/headline3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.55" />
+
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="24dp"
             android:layout_marginEnd="24dp"
             android:background="@color/teal_200"
             android:elevation="6dp"
@@ -66,32 +84,50 @@
                 android:textColor="#FFFFFF" />
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/textView13"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_indput_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="32dp"
-            android:layout_marginBottom="16dp"
-            android:fontFamily="@font/vazir_medium"
-            android:layoutDirection="rtl"
-            android:text="@string/tv_phone"
-            android:textColor="#000000"
-            android:textSize="@dimen/headline3"
+            android:background="@drawable/bg_edit_text"
+            android:focusable="auto"
+            android:hint="شماره تلفن"
+            app:boxBackgroundMode="none"
+            app:hintTextColor="@color/purple_700"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.55" />
+            app:layout_constraintTop_toBottomOf="@+id/text_input_layout"
+            app:layout_constraintVertical_bias="0.0">
+
+            <EditText
+                android:id="@+id/et_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/vazir_medium"
+                android:gravity="center"
+                android:inputType="phone"
+                android:layoutDirection="rtl"
+                android:maxLength="11"
+                android:maxLines="1"
+                android:textColor="#000000"
+                android:textSize="@dimen/subtiltle" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/text_input_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="34dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="34dp"
+            android:background="@drawable/bg_edit_text"
             android:focusable="auto"
-            android:hint="نام"
+            android:hint="نام و نام خانوادگی"
             app:boxBackgroundMode="none"
             app:hintTextColor="@color/purple_700"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -104,10 +140,10 @@
                 android:id="@+id/edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bg_edit_text"
+                android:layout_gravity="center"
                 android:elevation="8dp"
                 android:fontFamily="@font/vazir_medium"
-                android:gravity="center_vertical"
+                android:gravity="center"
                 android:inputType="text"
                 android:layoutDirection="rtl"
                 android:maxLines="1"
@@ -116,68 +152,13 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/bg_edit_text"
-            android:elevation="8dp"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="@+id/text_input_layout"
-            app:layout_constraintStart_toStartOf="@+id/text_input_layout"
-            app:layout_constraintTop_toBottomOf="@+id/text_input_layout">
-
-            <com.hbb20.CountryCodePicker
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:gravity="center_vertical"
-                android:layoutDirection="ltr"
-                app:ccp_defaultNameCode='IR'
-                app:ccp_hintExampleNumber="false"
-                app:ccp_hintExampleNumberType="MOBILE"
-                app:ccp_textGravity="LEFT"
-                app:ccp_textSize="@dimen/subtiltle" />
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/text_indput_layout"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:focusable="auto"
-                android:hint="شماره تلفن"
-                app:boxBackgroundMode="none"
-                app:hintTextColor="@color/purple_700"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView10"
-                app:layout_constraintVertical_bias="0.06999999">
-
-                <EditText
-                    android:id="@+id/et_phone"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="right"
-                    android:fontFamily="@font/vazir_medium"
-                    android:gravity="left"
-                    android:inputType="phone"
-                    android:layoutDirection="rtl"
-                    android:maxLength="10"
-                    android:maxLines="1"
-                    android:textColor="#000000"
-                    android:textSize="@dimen/subtiltle" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-        </LinearLayout>
-
         <Button
             android:id="@+id/btnPhone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
             android:layout_marginStart="32dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="24dp"
             android:layout_marginEnd="32dp"
             android:layout_weight="1.5"
             android:backgroundTint="@color/teal_200"
@@ -192,8 +173,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/text_input_layout"
             app:layout_constraintStart_toStartOf="@+id/text_input_layout"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-            app:layout_constraintVertical_bias="0.16000003" />
+            app:layout_constraintTop_toBottomOf="@+id/text_indput_layout"
+            app:layout_constraintVertical_bias="0.18" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
