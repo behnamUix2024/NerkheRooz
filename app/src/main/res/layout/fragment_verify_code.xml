@@ -18,9 +18,9 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
+            android:layout_marginStart="24dp"
             android:layout_marginTop="32dp"
-            android:layout_marginEnd="32dp"
+            android:layout_marginEnd="24dp"
             android:background="@color/teal_200"
             android:elevation="6dp"
             android:orientation="horizontal"
@@ -30,6 +30,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0">
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:alpha="0.4"
+                android:src="@drawable/bg_part" />
 
             <ImageView
                 android:id="@+id/imageView3"
@@ -43,7 +50,8 @@
                 android:id="@+id/imageView"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
                 android:src="@drawable/bg_part" />
 
             <TextView
@@ -54,7 +62,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/vazir_thin"
                 android:gravity="center_vertical"
-                android:text="مرحله 2 از 2"
+                android:text="مرحله 3 از3"
                 android:textColor="#FFFFFF" />
         </LinearLayout>
 

@@ -17,9 +17,9 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
+            android:layout_marginStart="24dp"
             android:layout_marginTop="32dp"
-            android:layout_marginEnd="32dp"
+            android:layout_marginEnd="24dp"
             android:background="@color/teal_200"
             android:elevation="6dp"
             android:orientation="horizontal"
@@ -34,16 +34,25 @@
                 android:id="@+id/imageView3"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_marginLeft="10dp"
-                android:src="@drawable/bg_part" />
+                android:alpha="0.4"
+                android:background="@drawable/bg_part" />
 
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="10dp"
+
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_part" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
                 android:alpha="0.4"
-                android:src="@drawable/bg_part" />
+                android:background="@drawable/bg_part" />
 
             <TextView
                 android:id="@+id/textView11"
@@ -53,7 +62,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/vazir_thin"
                 android:gravity="center_vertical"
-                android:text="مرحله 1 از 2"
+                android:text="مرحله 2 از 3"
                 android:textColor="#FFFFFF" />
         </LinearLayout>
 
