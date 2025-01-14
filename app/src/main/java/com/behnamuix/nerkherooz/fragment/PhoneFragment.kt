@@ -79,7 +79,7 @@ class PhoneFragment : Fragment() {
 
 
                 } else {
-                    binding.etPhone.setError("این فیلد نمیتواند خالی باشد")
+                    binding.etPhone.setError("این فیلد نباید خالی باشد")
                 }
 
             }
