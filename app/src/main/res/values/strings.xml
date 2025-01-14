@@ -1,23 +1,31 @@
 <resources>
-    <string name="app_name">NerkheRooz</string>
+    <string name="app_name">Nerkhe rooz</string>
+    <string name="tv_ver">ورژن: 1.1.0</string>
     <string name="app_name_splash">نرخ روز</string>
     <string name="subtitle">ابزاری برای رصد برخط قیمت طلا و سکه!</string>
     <string name="txt_porg">صبور باشید ...</string>
-    <string name="chat_msg1">  جین بازم موقع ترید ضرر کردم ای کاش یه ابزاری بود بهم  خیلی سریع و بدون دردسر به صورت روزانه قیمت طلا و سکه و ارز دیجیتال رو نشونم میداد</string>
-    <string name="chat_msg2">   اینکه ناراحتی نداره یه اپلیکیشنی هست که بهت خیلی سریع قیمتا رو نشون میده تازه کلی نمودار داره و کلی قابلیت های دیگه </string>
-    <string name="chat_msg3">  میشه بهم بگی اسم اپلیکیشن چیه خیلی به یه همچین ابزاری  نیاز دارم  </string>
-    <string name="chat_msg4">  آره حتمن اسمش "نرخ روز" هست میتونی از قسمت پایین از طریق شماره تلفن توش ثبت نام کنی  </string>
+    <string name="chat_msg1">  جین ای کاش یه ابزاری بود بهم  خیلی سریع و بدون دردسر به صورت روزانه قیمت طلا و سکه و ارز دیجیتال رو نشون میداد</string>
+    <string name="chat_msg2">   اینکه ناراحتی نداره یه اپلیکیشنی هست که بهت خیلی سریع قیمتا رو نشون میده تازه کلی نمودار داره و کلی قابلیت های باحال دیگه </string>
+    <string name="chat_msg3">  میشه بهم بگی اسم اپلیکیشنش چیه   </string>
+    <string name="chat_msg4">  آره  اسمش "نرخ روز" هستش و  میتونی از قسمت پایین از طریق شماره تلفن توش ثبت نام کنی  </string>
     <string name="btn_login_text"> ورود با شماره تلفن  </string>
-    <string name="btn_none_login_text"> ورود بدون ثبت نام </string>
-    <string name="btn_send_code">تایید شماره تلفن</string>
+    <string name="btn_none_login_text"> ورود به عنوان مهمان </string>
+    <string name="btn_send_code">ورود </string>
     <string name="tv_title_code">تایید کد</string>
 
     <string name="btn_verify_code">تایید کد</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="note_phone">توجه: از شماره تلفن شما  فقط برای ثبت نام استفاده میشود</string>
+    <string name="note_phone"> از شماره تلفن شما  فقط برای ثبت نام استفاده میشود</string>
     <string name="tv_code">لطفا کد 4 رقمی که برای شما ارسال شده است را وارد کنید </string>
     <string name="tv_phone"> اطلاعات خواسته شده را وارد کنید</string>
     <string name="tv_title"> ثبت نام</string>
+    <string name="name">****</string>
+    <string name="phone">***********</string>
+    <string name="backtohome">مدت زمان باقی مانده تا ارسال مجدد کد تایید:  --:--</string>
+    <string name="varnbaft">
+        تنوع‌سازی گسترده سبد دارایی زمانی لازم است که سرمایه‌گذاران حقیقتا نمی‌دانند در حال انجام چه کاری هستند.
+        \n<b> وارن بافت</b>
+    </string>
 
 </resources>

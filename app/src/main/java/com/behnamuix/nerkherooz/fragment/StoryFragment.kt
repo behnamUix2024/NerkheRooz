@@ -2,23 +2,27 @@ package com.behnamuix.nerkherooz.fragment
 
 import android.animation.ValueAnimator
 import android.content.Context
+import android.content.SharedPreferences
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
+import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.behnamuix.nerkherooz.R
 import com.behnamuix.nerkherooz.databinding.FragmentStoryBinding
+
 
 class StoryFragment : Fragment() {
 
     private lateinit var binding: FragmentStoryBinding
     var story_progress = 0
+    var storySeen: Boolean = false
 
     override fun onCreateView(
 
@@ -26,48 +30,66 @@ class StoryFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+        val sharedPreferences =
+            requireActivity().getSharedPreferences("prefs", Context.MODE_PRIVATE)
 
         binding = FragmentStoryBinding.inflate(inflater)
-        if (!isNetworkConnected()) {
-            binding.tvAlert.visibility = View.VISIBLE
-
+        val value = sharedPreferences.getString("storyseen", "false")
+        if (value.toBoolean()) {
+            findNavController().navigate(R.id.action_storyFragment2_to_homeFragment)
         } else {
-            binding.tvAlert.visibility = View.GONE
 
-        }
-        alertAnimation()
-        binding.imgCloseAlert.setOnClickListener() {
-            binding.tvAlert.visibility = View.GONE
+            if (!isNetworkConnected()) {
+                binding.tvAlert.visibility = View.VISIBLE
 
+            } else {
+                binding.tvAlert.visibility = View.GONE
 
-        }
-        binding.tvPart.setText("0/4")
-        binding.btnPhone.setOnClickListener {
-
-            findNavController().navigate(R.id.action_storyFragment2_to_phoneFragment)
-
-        }
-        startChatAnimation1()
-        story_progress += 1
-        binding.tvPart.setText("$story_progress/4")
-
-        binding.pbStory.progress = story_progress
-        binding.tvSkip.alpha = 1f
-        binding.tvSkip.setOnClickListener {
-            story_progress++
-            when (story_progress) {
-                2 -> startChatAnimation2()
-                3 -> startChatAnimation3()
-                4 -> startChatAnimation4()
+            }
+            alertAnimation()
+            binding.imgCloseAlert.setOnClickListener() {
+                binding.tvAlert.visibility = View.GONE
 
 
             }
+            binding.tvPart.setText("0/4")
+            binding.btnPhone1.setOnClickListener {
+                findNavController().navigate(R.id.action_storyFragment2_to_phoneFragment)
+            }
+            startChatAnimation1()
+            story_progress += 1
+            if (story_progress == 4) {
 
+            }
+            binding.tvPart.setText("$story_progress/4")
+
+            binding.pbStory.progress = story_progress
+            binding.tvSkip.alpha = 1f
+            binding.tvSkip.setOnClickListener {
+                story_progress++
+                when (story_progress) {
+                    2 -> startChatAnimation2()
+                    3 -> startChatAnimation3()
+                    4 -> startChatAnimation4()
+
+
+                }
+                if (story_progress > 4) {
+                    Toast.makeText(activity, "داستان تمام شد", Toast.LENGTH_SHORT).show()
+                    storySeen = true
+                    sharedPreferences.edit().putString("storyseen", storySeen.toString()).apply()
+
+                }
+
+            }
+
+
+          
         }
-
-
         return binding.root
     }
+
+
 
     private fun alertAnimation() {
         val animFadein = AnimationUtils.loadAnimation(
@@ -80,8 +102,8 @@ class StoryFragment : Fragment() {
 
     private fun startChatAnimation1() {
         val animator1 = ValueAnimator.ofFloat(0f, 1f).apply {
-            duration = 3000
-            startDelay = 2000
+            duration = 2000
+            startDelay = 1000
             addUpdateListener { animation ->
                 val progress = animation.animatedValue as Float
                 binding.constraintLayout2.alpha = progress
@@ -125,7 +147,7 @@ class StoryFragment : Fragment() {
 
     private fun startChatAnimation4() {
         val animator4 = ValueAnimator.ofFloat(0f, 1f).apply {
-            duration = 2000
+            duration = 1000
             startDelay = 800
             addUpdateListener { animation ->
                 val progress = animation.animatedValue as Float
